@@ -217,10 +217,10 @@
 /* Student photo — sits on top of deco circles */
 .hero-student-photo {
   position: absolute;
-  top: 0;
-  right: 30px;
-  width: 220px;
-  height: 300px;
+  top: 30px;
+  right: 20px;
+  width: 420px;
+  height: 200px;
   z-index: 3;
   border-radius: 20px;
   overflow: hidden;
@@ -809,8 +809,8 @@
   }
 
   .hero-student-photo {
-    width: 180px;
-    height: 250px;
+    width: 380px;
+    height: 550px;
   }
 
   .deco-circle-lg { width: 140px; height: 140px; }
