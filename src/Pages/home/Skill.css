@@ -1,0 +1,469 @@
+/* ─────────────────────────────────────────────
+   Skill.css — Updated to global.css design tokens
+   ───────────────────────────────────────────── */
+
+/* ── Shared Utilities ── */
+.sk-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sk-section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.sk-eyebrow {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  background: rgba(20, 184, 166, 0.1);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.sk-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.sk-gradient-text {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sk-subtext {
+  font-family: var(--font-main);
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.sk-subtext--left {
+  margin: 0 0 32px;
+  text-align: left;
+}
+
+/* ─────────────────────────────────────────────
+   SKILL DEVELOPMENT SECTION
+   ───────────────────────────────────────────── */
+.sk-skill-section {
+  background: var(--background);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-main);
+}
+
+.sk-skill-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Skill Grid ── */
+.sk-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+/* ── Skill Card ── */
+.sk-skill-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease,
+              transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+}
+
+.sk-skill-card.sk-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sk-skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(20, 184, 166, 0.14);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.sk-skill-icon {
+  font-size: 34px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.sk-skill-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+.sk-skill-desc {
+  font-family: var(--font-main);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.sk-card-line {
+  width: 40px;
+  height: 3px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+}
+
+/* ── Image Strip ── */
+.sk-img-strip {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 260px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.sk-strip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sk-strip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 24, 39, 0.72) 0%,
+    rgba(17, 24, 39, 0.2) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 0 56px;
+}
+
+.sk-strip-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 700;
+  color: #fff;
+  max-width: 540px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────
+   LEARNING IMPACT SECTION
+   ───────────────────────────────────────────── */
+.sk-impact-section {
+  background: #f9fafb;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-main);
+}
+
+.sk-impact-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sk-impact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sk-impact-inner.sk-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sk-impact-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-impact-img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  height: 280px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Stats Grid ── */
+.sk-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sk-stat-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sk-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(20, 184, 166, 0.14);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.sk-stat-emoji {
+  font-size: 32px;
+}
+
+.sk-stat-num {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.sk-stat-label {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ─────────────────────────────────────────────
+   TESTIMONIALS SECTION
+   ───────────────────────────────────────────── */
+.sk-testi-section {
+  background: var(--background);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-main);
+}
+
+.sk-testi-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Testimonial Grid ── */
+.sk-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.sk-testi-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease,
+              transform 0.5s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sk-testi-card.sk-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sk-testi-card.sk-testi-active {
+  border-color: var(--secondary);
+  box-shadow: 0 12px 40px rgba(20, 184, 166, 0.16);
+}
+
+.sk-testi-card.sk-testi-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  border-radius: 20px 20px 0 0;
+}
+
+.sk-testi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.sk-testi-stars {
+  color: #f59e0b;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.sk-testi-text {
+  font-family: var(--font-main);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0 0 24px;
+  font-style: italic;
+}
+
+.sk-testi-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sk-testi-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.sk-testi-name {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.sk-testi-role {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ── Dots ── */
+.sk-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sk-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: #e2e8f0;
+  border: none;
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.sk-dot--active {
+  width: 28px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sk-impact-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .sk-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-skill-section,
+  .sk-impact-section,
+  .sk-testi-section {
+    padding: 72px 0 60px;
+  }
+
+  .sk-skill-grid,
+  .sk-testi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sk-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .sk-strip-overlay {
+    padding: 0 28px;
+  }
+
+  .sk-stat-num {
+    font-size: 28px;
+  }
+}

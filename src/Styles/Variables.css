@@ -1,0 +1,19 @@
+:root {
+  /* Colors */
+  --primary: #4F46E5;
+  --secondary: #14B8A6;
+  --background: #F9FAFB;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+
+  /* Typography */
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+
+  /*  Font sizes */
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+   --navbar-height: 90px;
+}

@@ -1,0 +1,143 @@
+/* ── CertificationSection.css ──────────────────────────────────────────────
+   Uses variables from variables.css and font stack from Global.css
+   Mirrors InternCourse.css naming conventions and visual language
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Section wrapper ──────────────────────────────────────────────────────── */
+.cert-section {
+  background: var(--background);
+  padding: 80px 20px;
+  font-family: var(--font-main);
+}
+
+/* ── Layout container ─────────────────────────────────────────────────────── */
+.cert-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ── Left – text content ──────────────────────────────────────────────────── */
+.cert-content {
+  flex: 1;
+}
+
+/* Eyebrow label – mirrors ic-eyebrow */
+.cert-eyebrow {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #00c2cb;
+  margin-bottom: 14px;
+}
+
+/* Main heading – mirrors ic-heading */
+.cert-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin: 0 0 18px;
+}
+
+/* Gradient text span – mirrors ic-gradient-text */
+.cert-gradient-text {
+  background: linear-gradient(90deg, #00c2cb, #ff4f8b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Body text – mirrors ic-subtext */
+.cert-text {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0 0 24px;
+}
+
+/* Feature list ────────────────────────────────────────────────────────────── */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cert-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Gradient dot bullet */
+.cert-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c2cb, #ff4f8b);
+  flex-shrink: 0;
+}
+
+/* CTA button – mirrors .btn + .btn-primary from Global.css */
+.cert-btn {
+  background: #0f172a;
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: var(--text-md);
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cert-btn:hover {
+  background: #1e293b;
+  transform: scale(1.05);
+}
+
+/* ── Right – image panel ──────────────────────────────────────────────────── */
+.cert-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-image img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cert-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .cert-list li {
+    justify-content: center;
+  }
+
+  .cert-image img {
+    max-width: 100%;
+  }
+}

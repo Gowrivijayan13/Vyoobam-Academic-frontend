@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;500;600&display=swap');
+
+/* body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text-primary);
+} */
+body {
+  margin: 0;
+   padding-top: var(--navbar-height);
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+
+.footer-root {
+  background: #f0f0f2;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+/* Headings */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* Reusable classes */
+.container {
+  padding: 20px;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+/* Base Button */
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Primary (Dark Button) */
+.btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #1e293b;
+  transform: scale(1.05);
+}
+
+/* Secondary (Gradient Button) */
+.btn-secondary {
+  background: linear-gradient(90deg, #00c2cb, #ff4f8b);
+  color: white;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+/* FULL PAGE LAYOUT FIX */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push footer down */
+.page-container {
+  flex: 1;
+}
