@@ -8,7 +8,7 @@
 } */
 body {
   margin: 0;
-   padding-top: var(--navbar-height);
+  padding-top: var(--navbar-height);
   font-family: var(--font-main);
   background-color: var(--background);
   color: var(--text-primary);

@@ -54,7 +54,7 @@
 }
 
 .secondary {
-  background: linear-gradient(90deg, var(--secondary), var(--primary));
+   background: linear-gradient(90deg, #00c2cb, #ff4f8b);
   color: white;
 }
 
