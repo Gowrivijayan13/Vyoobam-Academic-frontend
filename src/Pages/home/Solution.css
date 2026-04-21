@@ -109,7 +109,7 @@
   background: var(--text-primary);
   color: #fff;
   padding: 12px 24px;
-  border-radius: 999px;
+  border-radius: 12px;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;

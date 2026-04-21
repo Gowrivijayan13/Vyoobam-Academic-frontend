@@ -251,9 +251,8 @@
   backdrop-filter: blur(4px);
 }
 .fl-quick-chip:hover {
-  background: #CBFF5E;
-  border-color: #a8d840;
-  color: #0d0d0d;
+ background: #0f172a;
+  color: #ffffff;
 }
 
 /* ============================================================
@@ -551,12 +550,13 @@
   color: #fff;
   background: #0d0d0d;
   padding: 8px 18px;
-  border-radius: 50px;
+  border-radius: 12px;
   transition: background 0.2s, transform 0.2s;
   white-space: nowrap;
 }
 .card-cta:hover {
-  background: var(--primary);
+  background: #0f172a;
+  color: #28b9d3;
   transform: translateY(-1px);
 }
 

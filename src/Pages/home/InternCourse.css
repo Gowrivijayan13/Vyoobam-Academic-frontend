@@ -249,7 +249,7 @@
   color: #fff;
   background: var(--btn-dark);
   border: none;
-  border-radius: 100px;
+  border-radius: 12px;
   padding: 16px 40px;
   cursor: pointer;
   overflow: hidden;

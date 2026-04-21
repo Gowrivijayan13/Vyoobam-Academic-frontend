@@ -1,5 +1,146 @@
 import React, { useEffect, useRef } from "react";
 import "./Whoweare.css";
+function MissionIllustration() {
+  return (
+    <svg
+      viewBox="0 0 420 400"
+      xmlns="http://www.w3.org/2000/svg"
+      className="wwa-mission-svg"
+      aria-hidden="true"
+    >
+      {/* ── background glow ring ── */}
+      <circle cx="210" cy="190" r="160" fill="rgba(79,70,229,0.05)" />
+      <circle cx="210" cy="190" r="120" fill="rgba(20,184,166,0.06)" />
+
+      {/* ── desk surface ── */}
+      <rect x="60" y="290" width="300" height="12" rx="6" fill="#e0e7ff" />
+
+      {/* ── laptop body ── */}
+      <rect x="110" y="230" width="200" height="62" rx="8" fill="#4f46e5" />
+      {/* screen content lines */}
+      <rect x="124" y="242" width="80" height="6" rx="3" fill="rgba(255,255,255,0.35)" />
+      <rect x="124" y="254" width="120" height="6" rx="3" fill="rgba(255,255,255,0.2)" />
+      <rect x="124" y="266" width="60" height="6" rx="3" fill="rgba(20,184,166,0.7)" />
+      {/* blinking cursor */}
+      <rect x="188" y="266" width="3" height="6" rx="1" fill="rgba(255,255,255,0.8)">
+        <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite" />
+      </rect>
+      {/* laptop base */}
+      <rect x="90" y="291" width="240" height="8" rx="4" fill="#3730a3" />
+
+      {/* ── books stack (left of desk) ── */}
+      <rect x="64" y="262" width="38" height="10" rx="3" fill="#14b8a6" />
+      <rect x="67" y="252" width="34" height="10" rx="3" fill="#6366f1" />
+      <rect x="70" y="243" width="28" height="9" rx="3" fill="#a5b4fc" />
+
+      {/* ── coffee cup (right) ── */}
+      <rect x="320" y="270" width="22" height="22" rx="4" fill="#f0fdf4" stroke="#14b8a6" strokeWidth="1.5" />
+      <path d="M342 278 Q352 278 352 284 Q352 290 342 290" fill="none" stroke="#14b8a6" strokeWidth="1.5" />
+      {/* steam */}
+      <path d="M327 268 Q329 262 327 257" fill="none" stroke="#a5b4fc" strokeWidth="1.2" strokeLinecap="round">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite" />
+      </path>
+      <path d="M334 266 Q336 260 334 255" fill="none" stroke="#a5b4fc" strokeWidth="1.2" strokeLinecap="round">
+        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+      </path>
+
+      {/* ── knowledge beams rising from screen ── */}
+      {[
+        { x1: 160, x2: 130, col: "#818cf8", delay: "0s" },
+        { x1: 185, x2: 175, col: "#14b8a6", delay: "0.3s" },
+        { x1: 210, x2: 210, col: "#6366f1", delay: "0.1s" },
+        { x1: 235, x2: 245, col: "#14b8a6", delay: "0.5s" },
+        { x1: 258, x2: 285, col: "#818cf8", delay: "0.2s" },
+      ].map(({ x1, x2, col, delay }, i) => (
+        <line
+          key={i}
+          x1={x1} y1={230}
+          x2={x2} y2={140}
+          stroke={col}
+          strokeWidth="1.5"
+          strokeDasharray="4 4"
+          opacity="0.6"
+        >
+          <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" begin={delay} repeatCount="indefinite" />
+        </line>
+      ))}
+
+      {/* ── central lightbulb / idea orb ── */}
+      <circle cx="210" cy="108" r="38" fill="#ede9fe" stroke="#4f46e5" strokeWidth="1.5" />
+      <circle cx="210" cy="108" r="26" fill="#4f46e5" />
+      {/* inner glow pulse */}
+      <circle cx="210" cy="108" r="26" fill="#6366f1" opacity="0.5">
+        <animate attributeName="r" values="26;30;26" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      {/* bulb highlight */}
+      <circle cx="203" cy="100" r="6" fill="rgba(255,255,255,0.25)" />
+      {/* filament lines */}
+      <line x1="204" y1="118" x2="204" y2="126" stroke="white" strokeWidth="1.5" opacity="0.6" />
+      <line x1="216" y1="118" x2="216" y2="126" stroke="white" strokeWidth="1.5" opacity="0.6" />
+      <line x1="204" y1="126" x2="216" y2="126" stroke="white" strokeWidth="1.5" opacity="0.6" />
+      {/* base cap */}
+      <rect x="201" y="138" width="18" height="5" rx="2" fill="#3730a3" />
+      <rect x="203" y="143" width="14" height="4" rx="2" fill="#3730a3" />
+
+      {/* ── floating skill orbs ── */}
+      {[
+        { cx: 120, cy: 82, r: 18, fill: "#ccfbf1", stroke: "#14b8a6", label: "Code", delay: "0s" },
+        { cx: 308, cy: 72, r: 16, fill: "#ede9fe", stroke: "#7c3aed", label: "Build", delay: "0.6s" },
+        { cx: 88,  cy: 155, r: 14, fill: "#dbeafe", stroke: "#3b82f6", label: "Think", delay: "1s" },
+        { cx: 336, cy: 148, r: 13, fill: "#fef3c7", stroke: "#f59e0b", label: "Grow", delay: "0.4s" },
+      ].map(({ cx, cy, r, fill, stroke, label, delay }, i) => (
+        <g key={i}>
+          <circle cx={cx} cy={cy} r={r} fill={fill} stroke={stroke} strokeWidth="1.2">
+            <animate attributeName="cy" values={`${cy};${cy - 5};${cy}`} dur="3s" begin={delay} repeatCount="indefinite" />
+          </circle>
+          <text
+            x={cx} y={cy + 1}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize="9"
+            fontWeight="700"
+            fill={stroke}
+            fontFamily="system-ui, sans-serif"
+          >
+            {label}
+          </text>
+        </g>
+      ))}
+
+      {/* ── star sparkles ── */}
+      {[
+        { x: 155, y: 52 }, { x: 270, y: 44 }, { x: 340, y: 110 }, { x: 78, y: 118 },
+      ].map(({ x, y }, i) => (
+        <g key={i}>
+          <line x1={x} y1={y - 5} x2={x} y2={y + 5} stroke="#c7d2fe" strokeWidth="1.2">
+            <animate attributeName="opacity" values="1;0.2;1" dur={`${1.5 + i * 0.4}s`} repeatCount="indefinite" />
+          </line>
+          <line x1={x - 5} y1={y} x2={x + 5} y2={y} stroke="#c7d2fe" strokeWidth="1.2">
+            <animate attributeName="opacity" values="1;0.2;1" dur={`${1.5 + i * 0.4}s`} repeatCount="indefinite" />
+          </line>
+        </g>
+      ))}
+
+      {/* ── connection arc (theory → practice) ── */}
+      <path
+        d="M 80 310 Q 80 370 210 370 Q 340 370 340 310"
+        fill="none"
+        stroke="url(#missionGrad)"
+        strokeWidth="2"
+        strokeDasharray="6 4"
+        opacity="0.4"
+      />
+      <defs>
+        <linearGradient id="missionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#4f46e5" />
+          <stop offset="100%" stopColor="#14b8a6" />
+        </linearGradient>
+      </defs>
+      <text x="210" y="382" textAnchor="middle" fontSize="9" fill="#94a3b8" fontFamily="system-ui,sans-serif" letterSpacing="1.5" fontWeight="600">LEARN · BUILD · BECOME</text>
+    </svg>
+  );
+}
 
 /* ── tiny helper: count-up animation ── */
 function useCountUp(target, duration = 1800) {
@@ -175,8 +316,62 @@ export default function WhoWeAre() {
           <strong>so you don't just study, you become.</strong>
         </p>
       </section>
+      {/* ════════════════ HISTORY ════════════════ */}
+<section className="wwa-history">
+  <div className="wwa-section-inner">
+    <span className="wwa-section-tag">Our History</span>
+    <h2 className="wwa-section-heading">Our Journey</h2>
+    <p className="wwa-section-sub">
+      From a small IT solutions provider to a full-fledged training and tech ecosystem — here's how we got here.
+    </p>
+    <div className="wwa-timeline">
+      {[
+        {
+          year: "2015",
+          tag: "Establishment",
+          title: "Foundation & Beginning",
+          desc:
+            "Founded as a web and IT solutions provider. Our journey began with a strong vision to deliver reliable web and IT solutions — helping small and medium businesses establish their online presence with confidence.",
+        },
+        {
+          year: "2022",
+          tag: "Operations",
+          title: "Growth & Expansion",
+          desc:
+            "Expanded as a tech hub in Kumbakonam. We transitioned from a service-based company into a collaborative technology space supporting innovation, development, and learning.",
+        },
+        {
+          year: "2023",
+          tag: "Training & Development",
+          title: "Academic Launch",
+          desc:
+            "Launched Vyoobam Academic across Tamil Nadu. Through structured training programs, we equipped learners with real-world IT skills, bridging the gap between academic knowledge and industry requirements.",
+        },
+        {
+          year: "2025",
+          tag: "Leadership",
+          title: "Mentorship & Ecosystem",
+          desc:
+            "Developing scalable web and mobile applications while actively mentoring 30+ interns — creating a strong learning ecosystem focused on practical exposure, teamwork, and career growth.",
+        },
+      ].map(({ year, tag, title, desc }, i) => (
+        <div className="wwa-timeline-item" key={i}>
+          <div className="wwa-timeline-left">
+            <div className="wwa-timeline-year">{year}</div>
+            <div className="wwa-timeline-dot" />
+          </div>
+          <div className="wwa-timeline-card">
+            <div className="wwa-timeline-tag">{tag}</div>
+            <h4 className="wwa-timeline-title">{title}</h4>
+            <p className="wwa-timeline-desc">{desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* ════════════════ MISSION ════════════════ */}
+      {/* ════════════════ MISSION ════════════════
       <section className="wwa-mission">
         <div className="wwa-section-inner">
           <span className="wwa-section-tag">Our Mission</span>
@@ -198,7 +393,37 @@ export default function WhoWeAre() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      {/* ════════════════ MISSION ════════════════ */}
+<section className="wwa-mission">
+  <div className="wwa-section-inner wwa-mission-layout">
+    {/* LEFT: text content */}
+    <div className="wwa-mission-content">
+      <span className="wwa-section-tag">Our Mission</span>
+      <h2 className="wwa-section-heading">Why We Exist</h2>
+      <p className="wwa-mission-intro">
+        Traditional education focuses on theory. We focus on{" "}
+        <em>real-world readiness.</em>
+      </p>
+      <div className="wwa-mission-pills">
+        {[
+          { text: "Equip students with skills that actually matter" },
+          { text: "Build confidence through practice" },
+          { text: "Prepare learners for real industry challenges" },
+        ].map(({ text }, i) => (
+          <div className="wwa-mission-pill" key={i}>
+            <span>{text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* RIGHT: illustration */}
+    <div className="wwa-mission-visual">
+      <MissionIllustration />
+    </div>
+  </div>
+</section>
 
       {/* ════════════════ APPROACH ════════════════ */}
       <section className="wwa-approach">

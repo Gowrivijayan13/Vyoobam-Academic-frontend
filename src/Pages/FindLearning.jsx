@@ -11,8 +11,8 @@ import data1 from"../assets/data1.png";
 const CATEGORIES = [
   { id: "fullstack", label: "Full Stack Development",count: 48 },
   { id: "web",      label: "Web Development",         count: 72 },
-  { id: "data",     label: "Data Science",            icon: "📊", count: 55 },
-  { id: "design",   label: "UI/UX Design",            icon: "🎨", count: 39 },
+  { id: "data",     label: "Data Science",           count: 55 },
+  { id: "design",   label: "UI/UX Design",            count: 39 },
 ];
 
 const COURSES = [

@@ -1,86 +1,382 @@
+/* ═══════════════════════════════════════════════════════
+   FOOTER — uses CSS variables from your global/variables.css
+   Fonts: --font-main (Poppins) · --font-heading (Inter)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── ROOT ─────────────────────────────────────────────── */
 .footer-root {
-  background: #f0f0f2;
-  padding: 40px 20px;
-  font-family: "Poppins", sans-serif;
-    text-align: justify;
-    line-height: 1.6;
+  background: #ececee;
+  padding: 52px 24px 0;        /* top padding gives room for the floating badge */
+  font-family: var(--font-main);
+  overflow: visible;
+  position: relative;
 }
 
-/* layout */
-.footer-inner {
-  max-width: 1100px;
-  margin: auto;
+/* ── WRAPPER ──────────────────────────────────────────── */
+.footer-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
   display: flex;
-  gap: 40px;
+  gap: 20px;
+  align-items: stretch;
   flex-wrap: wrap;
 }
 
-/* left */
-.footer-brand {
-  flex: 1;
+/* ════════════════════════════════════════════════════════
+   LEFT — BRAND CARD
+   ════════════════════════════════════════════════════════ */
+.footer-brand-card {
+  flex: 0 0 280px;
+  background: linear-gradient(160deg, #2563eb 0%, #1d4ed8 45%, #1e3a8a 100%);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
+/* subtle noise texture overlay */
+.footer-brand-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* logo row */
 .footer-logo-row {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .footer-logo-img {
-  width: 40px;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  /* filter: brightness(0) invert(1); */
 }
 
 .footer-brand-name {
-  font-weight: 700;
+  font-family: var(--font-heading);   /* Inter — matches your h1/h2/h3 */
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-/* middle */
-.footer-nav {
+/* tagline */
+.footer-tagline {
+  font-family: var(--font-main);      /* Poppins */
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
   flex: 1;
+  position: relative;
+}
+
+/* social row */
+.footer-social-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  margin-top: auto;
+}
+
+.footer-stay-in-touch {
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.social-btn:hover {
+  background: rgba(0, 0, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+/* ════════════════════════════════════════════════════════
+   RIGHT — SINGLE MERGED PANEL (side-by-side layout)
+   ════════════════════════════════════════════════════════ */
+.footer-merged-panel {
+  flex: 1;
+  min-width: 300px;
+  background: #e4e4e7;
+  border-radius: 20px;
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: row;      /* nav LEFT · CTA RIGHT */
+  gap: 0;
+  position: relative;
+}
+
+/* ── Floating badge ─────── */
+.footer-icon-badge {
+  position: absolute;
+  top: -22px;
+  right: 24px;
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #60a5fa, #2563eb);
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.footer-badge-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  /* filter: brightness(0) invert(1); */
+}
+
+/* ── Left half: nav columns ── */
+.footer-panel-nav {
   display: flex;
   gap: 40px;
+  flex-shrink: 0;
+}
+
+.footer-nav-heading {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin: 0 0 14px;
 }
 
 .footer-nav-col ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-nav-col a {
+  font-family: var(--font-main);
+  font-size: 0.87rem;
+  font-weight: 400;
   text-decoration: none;
-  color: #333;
+  color: #3f3f46;
+  transition: color 0.18s;
 }
 
-/* right */
-.footer-cta {
+.footer-nav-col a:hover {
+  color: var(--primary);
+}
+
+/* ── Vertical divider ─── */
+.footer-panel-vdivider {
+  width: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 0 32px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* ── Right half: CTA ── */
+.footer-panel-cta {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.footer-cta-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-cta-sub {
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  color: #71717a;
+  margin: 0 0 2px;
+}
+
+.footer-cta-heading {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #18181b;
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+
+/* email row */
 .footer-email-row {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
+  align-items: center;
 }
 
 .footer-email-row input {
   flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #d4d4d8;
+  background: #fafafa;
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  color: #3f3f46;
+  outline: none;
+  transition: border-color 0.2s;
 }
 
-/* bottom */
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  color: #888;
-}
-.footer-nav-col a {
-  text-decoration: none;
-  color: #333;
-  transition: 0.2s;
+.footer-email-row input:focus {
+  border-color: var(--primary);
+  background: #fff;
 }
 
-.footer-nav-col a:hover {
-  color: var(--accent);
+.footer-email-row input::placeholder {
+  color: #a1a1aa;
+}
+
+.footer-subscribe-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #18181b;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.footer-subscribe-btn:hover {
+  background: #27272a;
+  transform: translateY(-1px);
+}
+
+.footer-subscribe-btn:active {
+  transform: translateY(0);
+}
+
+/* copyright */
+.footer-copyright {
+  font-family: var(--font-main);
+  font-size: 0.73rem;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════
+   WATERMARK
+   ════════════════════════════════════════════════════════ */
+.footer-watermark {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.18em;
+  font-family: var(--font-heading);   /* Inter — bold & wide */
+  font-weight: 900;
+  font-size: clamp(56px, 11vw, 128px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-top: 10px;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+.footer-watermark-main {
+  color: rgba(0, 0, 0, 0.065);
+}
+
+/* "Tech" is slightly smaller & lighter so it reads as a subtitle */
+.footer-watermark-sub {
+  font-size: clamp(56px, 11vw, 128px);
+  font-weight:900;
+  color:  rgba(0, 0, 0, 0.065);
+  letter-spacing: -0.04em;
+  align-self: baseline;
+  padding-bottom: 0.08em;
+}
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .footer-wrapper {
+    flex-direction: column;
+  }
+
+  .footer-brand-card {
+    flex: unset;
+    width: 100%;
+  }
+
+  .footer-merged-panel {
+    min-width: unset;
+    width: 100%;
+    flex-direction: column;  /* stack nav above CTA on mobile */
+    gap: 24px;
+  }
+
+  .footer-panel-vdivider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    align-self: auto;
+  }
+
+  .footer-panel-nav {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-panel-nav {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-email-row {
+    flex-direction: column;
+  }
+
+  .footer-email-row input,
+  .footer-subscribe-btn {
+    width: 100%;
+  }
 }
