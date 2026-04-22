@@ -18,35 +18,61 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
 
-    emailjs
-      .send(
-        "service_0j41ccl",
-        "template_7lcaur8",
-        {
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-        },
-        "s87SPucOWGMXh9uBy",
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setSubmitted(true);
-          setForm({ name: "", email: "", phone: "+91 ", message: "" });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          alert("Failed to send message");
-        },
-      );
-  };
+  //   emailjs
+  //     .send(
+  //       "service_0j41ccl",
+  //       "template_7lcaur8",
+  //       {
+  //         name: form.name,
+  //         email: form.email,
+  //         phone: form.phone,
+  //         message: form.message,
+  //       },
+  //       "s87SPucOWGMXh9uBy",
+  //     )
+  //     .then(
+  //       () => {
+  //         setLoading(false);
+  //         setSubmitted(true);
+  //         setForm({ name: "", email: "", phone: "+91 ", message: "" });
+  //       },
+  //       (error) => {
+  //         setLoading(false);
+  //         console.error(error);
+  //         alert("Failed to send message");
+  //       },
+  //     );
+  // };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "+91 ", message: "" });
+    } else {
+      alert("Failed to send message");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Server error");
+  }
+
+  setLoading(false);
+};
 
   return (
     <div className="contact-page page-container">
