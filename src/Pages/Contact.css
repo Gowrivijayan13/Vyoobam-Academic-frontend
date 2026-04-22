@@ -639,3 +639,36 @@
     gap: 18px;
   }
 }
+.success-ui {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.success-ui h2 {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.success-ui p {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.success-ui .sub-text {
+  font-size: var(--text-sm);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.success-ui button {
+  margin-top: 20px;
+}
