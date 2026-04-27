@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./NavBar.css";
 import logo from "../assets/vyoobamlogo_rm.png";
+import logo1 from "../assets/vyoobamlogo_edit.png"
 
 const navLinks = [
   { to: "/find-learning",    label: "Find Learning" },
@@ -58,7 +59,7 @@ function Header() {
         <div className="header-merged">
 
           <Link to="/" className="merged-logo">
-            <img src={logo} alt="Vyoobam logo" />
+            <img src={logo1} alt="Vyoobam logo" />
           </Link>
 
           <div className="merged-divider" />

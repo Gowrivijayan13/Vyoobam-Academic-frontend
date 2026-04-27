@@ -272,7 +272,7 @@ export default function Earn() {
         <div className="final-cta-glow" />
         <h2>Turn Your Skills<br /><span className="gradient-text">Into Proof</span></h2>
         <p>
-          Earn certifications that reflect what you can actually do —<br />not just
+          Earn certifications that reflect what you can actually do<br />not just
           what you studied.
         </p>
         <div className="hero-cta-row">
