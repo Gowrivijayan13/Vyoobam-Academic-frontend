@@ -387,7 +387,7 @@ export default function FindLearning() {
                         <span className="rating-val">{course.rating}</span>
                         <span className="rating-count">({course.students.toLocaleString()})</span>
                       </div>
-                      <Link to="#" className="card-cta">
+                      <Link to="/contact" className="card-cta">
                         Enroll
                       </Link>
                     </div>

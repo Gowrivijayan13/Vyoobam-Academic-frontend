@@ -4,6 +4,7 @@ import "./ProblemSection.css";
 // Import your images here:
 import sadImg from "../../assets/before.png";
 import happyImg from "../../assets/after.png";
+import {Link} from  "react-router-dom"
 
 
 const ProblemSection = () => {
@@ -92,10 +93,10 @@ const ProblemSection = () => {
               </li>
             </ul>
 
-            <a href="/courses" className="ps-cta-btn">
+            <Link to="/find-learning" className="ps-cta-btn">
               <span>Explore Courses</span>
              
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./InternCourse.css";
+import {Link} from"react-router-dom"
 
 const courses = [
   {
@@ -140,10 +141,10 @@ export default function InternCourse() {
 
           {/* View All Button */}
           <div className="ic-cta-wrap">
-            <button className="ic-primary-btn">
+            <Link to ="/find-learning"><button className="ic-primary-btn">
               View All Courses
               <span className="ic-btn-shine" />
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>
@@ -181,9 +182,9 @@ export default function InternCourse() {
                 ))}
               </div>
 
-              <button className="ic-primary-btn ic-primary-btn--outline">
+             <Link to="/contact"> <button className="ic-primary-btn ic-primary-btn--outline">
                 Apply for Internship 
-              </button>
+              </button></Link>
             </div>
 
             {/* Right – image collage */}

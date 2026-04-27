@@ -1,6 +1,7 @@
 import React from "react";
 import "./Discoverpath.css";
 import heroImage from "../assets/heropath.png";
+import { Link } from "react-router-dom";
 
 /* ─────────────────────────────────────────
    DATA
@@ -537,8 +538,8 @@ export default function DiscoverPath() {
         </p>
 
         <div className="dp-cta__actions">
-          <button className="btn dp-cta__btn-outline">Explore All Paths</button>
-          <button className="btn dp-cta__btn-solid">Get Started Free</button>
+          <Link to="/discover-paths"><button className="btn dp-cta__btn-outline">Explore All Paths</button></Link>
+          <Link to="/contact"><button className="btn dp-cta__btn-solid">Get Started Free</button></Link>
         </div>
       </section>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./CertificationSection.css";
 import certImage from "../../assets/certificate.png"; // use your image
-
+import {Link} from "react-router-dom"
 const CertificationSection = () => {
   return (
     <section className="cert-section">
@@ -25,7 +25,7 @@ const CertificationSection = () => {
             <li>Proof of practical learning and experience</li>
           </ul>
 
-          <button className="cert-btn">Get Certified</button>
+          <Link to="/career-launchpad" ><button className="cert-btn">Get Certified</button></Link>
         </div>
 
         {/* RIGHT IMAGE */}

@@ -1,5 +1,5 @@
 import "./DemoClasses.css";
-
+import {Link} from "react-router-dom"
 const features = [
   {
     icon: "",
@@ -65,10 +65,10 @@ export default function DemoClasses() {
             </div>
           </div>
 
-          <a href="#book-demo" className="demo-cta">
+          <Link to="/contact" className="demo-cta">
             <span>Book Free Demo</span>
           
-          </a>
+          </Link>
 
           <p className="demo-disclaimer">
             No credit card required &nbsp;·&nbsp; Instant confirmation

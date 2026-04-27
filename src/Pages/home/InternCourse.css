@@ -255,6 +255,7 @@
   overflow: hidden;
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 24px rgba(15, 23, 42, 0.22);
+  
 }
 
 .ic-primary-btn:hover {
@@ -268,7 +269,7 @@
   border: 2px solid var(--btn-dark);
   color: var(--btn-dark);
   box-shadow: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   margin-top: 40px;
@@ -490,4 +491,11 @@
     left: 12px;
     bottom: -20px;
   }
+}
+a.ic-primary-btn,
+a.ic-primary-btn:link,
+a.ic-primary-btn:visited,
+a.ic-primary-btn:hover,
+a.ic-primary-btn:active {
+  text-decoration: none;
 }

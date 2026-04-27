@@ -1,5 +1,6 @@
 import React from "react";
 import "./Solution.css";
+import { Link } from "react-router-dom";
 
 /* ── Wavy art for the featured card image ── */
 function WavyArt() {
@@ -53,7 +54,7 @@ function Solution() {
             <div className="mission-label"></div>
             <h1 className="headline">
               Your Complete<br />
-              <span className="headline-accent">Career Solution.</span>
+              <span className="headline-accent">Career Solution</span>
             </h1>
           </div>
 
@@ -62,7 +63,7 @@ function Solution() {
               We bridge the gap between education and employment with
               industry-focused training that gets you corporate-ready.
             </p>
-            <button className="explore-btn">Explore More</button>
+            <Link to="/career-launchpad"><button className="explore-btn">Explore More</button></Link>
           </div>
         </div>
 

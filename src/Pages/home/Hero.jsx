@@ -6,6 +6,7 @@ import internshipImg from "../../assets/intern.png";
 import projectImg from "../../assets/projects.png";
 import certImg from "../../assets/certificates.png";
 import skillsImg from "../../assets/skills.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -21,8 +22,8 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <button className="btn primary">Explore Courses</button>
-          <button className="btn secondary">Book Demo</button>
+          <Link to="/find-learning"><button className="btn primary">Explore Courses</button></Link>
+          <Link to="/contact"><button className="btn secondary">Book Demo</button></Link>
         </div>
       </div>
 
