@@ -331,12 +331,12 @@ export default function DiscoverPath() {
 
     {/* RIGHT */}
     <div className="dp-hero__actions">
-      <button className="btn btn-primary dp-hero__btn-primary">
+      <Link to="/discover-paths"><button className="btn btn-primary dp-hero__btn-primary">
         Explore Paths
-      </button>
-      <button className="btn btn-secondary dp-hero__btn-secondary">
+      </button></Link>
+      <Link to="/contact"><button className="btn btn-secondary dp-hero__btn-secondary">
         Get Started Free
-      </button>
+      </button></Link>
     </div>
 
   </div>
@@ -510,7 +510,7 @@ export default function DiscoverPath() {
             </div>
 
             {/* ✅ Global btn + featured override for colour */}
-            <button className="btn btn-primary">Start Learning</button>
+           <Link to="/contact">  <button className="btn btn-primary">Start Learning</button></Link>
           </div>
 
           {/* Right — illustration */}

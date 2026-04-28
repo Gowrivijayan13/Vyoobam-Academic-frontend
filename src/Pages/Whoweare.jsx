@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Whoweare.css";
+import {Link} from 'react-router-dom'
 function MissionIllustration() {
   return (
     <svg
@@ -273,12 +274,12 @@ export default function WhoWeAre() {
             professionals through real-world learning.
           </p>
           <div className="wwa-hero-ctas">
-            <button className="btn btn-primary wwa-cta-btn">
+           <Link to="/who-we-are"> <button className="btn btn-primary wwa-cta-btn">
               Start Your Journey
-            </button>
-            <button className="btn btn-secondary wwa-cta-btn">
+            </button></Link>
+            <Link to="/contact"><button className="btn btn-secondary wwa-cta-btn">
               Book Free Demo
-            </button>
+            </button></Link>
           </div>
         </div>
 
@@ -524,12 +525,12 @@ export default function WhoWeAre() {
             <span className="wwa-flow">becoming</span>
           </p>
           <div className="wwa-hero-ctas">
-            <button className="btn btn-primary wwa-cta-btn">
+            <Link to="/contact"><button className="btn btn-primary wwa-cta-btn">
               Start Learning Today
-            </button>
-            <button className="btn btn-secondary wwa-cta-btn">
+            </button></Link>
+           <Link to ="/find-learning"> <button className="btn btn-secondary wwa-cta-btn">
               Explore Courses
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>

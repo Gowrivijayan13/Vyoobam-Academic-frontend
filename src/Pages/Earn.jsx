@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Earn.css";
 import logo from "../assets/vyoobamlogo_rm.png";
 import stud from "../assets/stud.png";
+import { Link } from "react-router-dom";
 
 // Hero Visual — matches Image 2: big student photo + deco circles + 3 mini circles
 const HeroVisual = () => (
@@ -141,8 +142,10 @@ export default function Earn() {
             </div>
           </div>
           <div className="hero-cta-row">
-            <button className="btn btn-primary">Sample Certificate</button>
-            <button className="btn btn-secondary">Enrolled Courses</button>
+          <Link to="/#sample-certificate">
+  <button className="btn btn-primary">Sample Certificate</button>
+</Link>
+          <Link to="/contact">  <button className="btn btn-secondary">Enrolled Courses</button></Link>
           </div>
         </div>
         <div className="hero-right">
@@ -195,7 +198,7 @@ export default function Earn() {
             <li>Designed to showcase real capabilities</li>
             <li>Shareable across professional platforms</li>
           </ul>
-          <button className="btn btn-secondary mt-16">Explore Courses</button>
+        <Link to="/find-learning">  <button className="btn btn-secondary mt-16">Explore Courses</button></Link>
         </div>
         <div className="split-right">
           <StudentVisual />
@@ -276,8 +279,8 @@ export default function Earn() {
           what you studied.
         </p>
         <div className="hero-cta-row">
-          <button className="btn btn-primary">Explore Courses</button>
-          <button className="btn btn-secondary">View Certificates</button>
+          <Link to="/find-learning"><button className="btn btn-primary">Explore Courses</button></Link>
+          <Link to="/earn-credentials"> <button className="btn btn-secondary">View Certificates</button></Link>
         </div>
       </section>
     </div>

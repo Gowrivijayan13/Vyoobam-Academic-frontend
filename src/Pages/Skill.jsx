@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Skill.css";
 import skillhero from "../assets/skillhero.png";
+import { Link } from "react-router-dom";
 
 // ─── ORIGINAL HERO CARDS ──────────────────────────────────────────────────
 const heroCards = [
@@ -115,9 +116,9 @@ function HeroSection() {
             ))}
           </div>
           <div className="skilllab-cta-row">
-            <button className="skilllab-cta-btn">
+           <Link to="/contact"> <button className="skilllab-cta-btn">
               <span>Start Practicing Now</span>
-            </button>
+            </button></Link>
             <div className="skilllab-stats">
               <div className="stat">
                 <span className="stat-num">12K+</span>
@@ -521,8 +522,8 @@ export default function SkillLab() {
           <h2 className="sl-final-title">Ready to Level Up?</h2>
           <p className="sl-final-sub">Join 12,000+ developers who are building real skills, today.</p>
           <div className="sl-final-actions">
-            <button className="skilllab-cta-btn">Start Practicing Today</button>
-            <button className="sl-secondary-btn">Explore Projects</button>
+           <Link to="/skill-lab"> <button className="skilllab-cta-btn">Start Practicing Today</button></Link>
+            <Link to="/contact"><button className="sl-secondary-btn">Explore Projects</button></Link>
           </div>
         </div>
 

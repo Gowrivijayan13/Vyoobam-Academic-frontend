@@ -4,7 +4,7 @@ import certImage from "../../assets/certificate.png"; // use your image
 import {Link} from "react-router-dom"
 const CertificationSection = () => {
   return (
-    <section className="cert-section">
+    <section id="sample-certificate" className="cert-section">
       <div className="cert-container">
 
         {/* LEFT CONTENT */}

@@ -31,27 +31,27 @@ const Hero = () => {
       <div className="hero-visual">
 
         <div className="card card-main">
-          <img src={internshipImg} alt="Internship" />
+         <Link to="/find-learning"><img src={internshipImg} alt="Internship" /></Link> 
           <span className="card-tag">Internship</span>
         </div>
 
         <div className="card card-a">
-          <img src={fullstack} alt="Full Stack" />
+          <Link to="/discover-paths"><img src={fullstack} alt="Full Stack" /></Link>
           <span className="card-tag">Python Full Stack</span>
         </div>
 
         <div className="card card-b">
-          <img src={projectImg} alt="Projects" />
+          <Link to="/who-we-are"><img src={projectImg} alt="Projects" /></Link>
           <span className="card-tag">Projects</span>
         </div>
 
         <div className="card card-c">
-          <img src={certImg} alt="Certification" />
+          <Link to="/earn-credentials"><img src={certImg} alt="Certification" /></Link>
           <span className="card-tag">Certification</span>
         </div>
 
         <div className="card card-d">
-          <img src={skillsImg} alt="Skills" />
+          <Link to="/skill-lab"><img src={skillsImg} alt="Skills" /></Link>
           <span className="card-tag">Skills</span>
         </div>
 

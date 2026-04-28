@@ -78,7 +78,7 @@ function Header() {
 
           <div className="merged-divider" />
 
-          <button className="btn merged-btn">Join</button>
+         <Link to="/contact"> <button className="btn merged-btn">Join</button></Link>
         </div>
 
         {/* Mobile toggle */}
@@ -107,9 +107,9 @@ function Header() {
             {link.label}
           </Link>
         ))}
-        <button className="btn" style={{ marginTop: "1rem" }}>
+      <Link to="/contatc">  <button className="btn" style={{ marginTop: "1rem" }}>
           Join
-        </button>
+        </button></Link>
       </div>
     </>
   );

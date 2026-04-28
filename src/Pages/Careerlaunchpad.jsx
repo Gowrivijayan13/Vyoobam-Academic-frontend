@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Careerlaunchpad.css";
+import { Link } from "react-router-dom";
 
 /* ── DATA ──────────────────────────────────────────────────────── */
 
@@ -284,8 +285,8 @@ export default function CareerLaunchpad() {
             skills, confidence, and mindset needed to succeed in real-world roles.
           </p>
           <div className="cl-cta-group">
-            <button className="btn btn-primary cl-btn-dark">Start Your Career Journey</button>
-            <button className="btn btn-secondary cl-btn-grad">Book Free Demo</button>
+           <Link to="/who-we-are"> <button className="btn btn-primary cl-btn-dark">Start Your Career Journey</button></Link>
+           <Link to="/contact"> <button className="btn btn-secondary cl-btn-grad">Book Free Demo</button></Link>
           </div>
           <p className="cl-tagline">
             "From learning skills to launching careers — we guide every step."
@@ -505,8 +506,8 @@ export default function CareerLaunchpad() {
             and confidence to actually land them.
           </p>
           <div className="cl-cta-buttons">
-            <button className="cl-cta-primary">Start Your Career Journey</button>
-            <button className="cl-cta-secondary">Book a Free Demo</button>
+           <Link to="/who-we-are"> <button className="cl-cta-primary">Start Your Career Journey</button></Link>
+           <Link to="/contact"> <button className="cl-cta-secondary">Book a Free Demo</button></Link>
           </div>
           <p className="cl-cta-trust"><span>No commitment needed</span> · Free demo · Seats fill fast</p>
         </div>
